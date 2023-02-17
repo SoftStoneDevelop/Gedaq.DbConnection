@@ -15,4 +15,4 @@
   <a href="https://github.com/SoftStoneDevelop/Gedaq.DbConnection/tree/main/Documentation/Readme.md">Documentation</a>
 </h3>
 
-Attributes required for Gedaq ORM operation for DbConnection for all database providers.
+Attributes required for Gedaq ORM to work with methods available in DbConnection. Allows you to work with the database without being tied to a specific database.
