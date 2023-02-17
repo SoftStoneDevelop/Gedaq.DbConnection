@@ -1,0 +1,21 @@
+﻿using System;
+using System.Data;
+
+namespace Gedaq.DbConnection.Attributes
+{
+    [AttributeUsage(AttributeTargets.Class | AttributeTargets.Struct | AttributeTargets.Method, AllowMultiple = true)]
+    public sealed class ParametrAttribute : Attribute
+    {
+        public ParametrAttribute(
+            string methodName,
+            string parametrName,
+            Type parametrType,
+            DbType dbType = DbType.Object,
+            int size = -1,
+            bool nullable = false,
+            ParameterDirection direction = ParameterDirection.Input
+            )
+        {
+        }
+    }
+}
