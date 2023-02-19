@@ -4,7 +4,7 @@
 
 <h3 align="center">
 
-  [![Nuget](https://img.shields.io/nuget/v/Gedaq.DbConnection?logo=Gedaq.DbConnection)](https://www.nuget.org/packages/Gedaq.DbConnection/)
+  [![Nuget](https://img.shields.io/nuget/v/Gedaq.DbConnection?logo=Gedaq.DbConnections)](https://www.nuget.org/packages/Gedaq.DbConnection/)
   [![Downloads](https://img.shields.io/nuget/dt/Gedaq.DbConnection.svg)](https://www.nuget.org/packages/Gedaq.DbConnection/)
   [![Stars](https://img.shields.io/github/stars/SoftStoneDevelop/Gedaq.DbConnection?color=brightgreen)](https://github.com/SoftStoneDevelop/Gedaq.DbConnection/stargazers)
   [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
