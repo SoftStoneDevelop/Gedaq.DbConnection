@@ -74,4 +74,4 @@ public async Task SomeMethod(DbConnection connection)
 ```
 
 PersonCustom.Name is not real ref in database, it's just grouping in mapping.
-That's why we can't check against the primary key ':?~'. Name will only be set to null if all of its properties are null.
+That's why we can't check against the primary key `:?~`. Name will only be set to null if all of its properties are null.
