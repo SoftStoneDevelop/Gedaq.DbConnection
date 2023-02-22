@@ -90,6 +90,9 @@ public async Task SomeMethod(DbConnection connection)
     
     var rowsAffected = connection.NonQueryGetAllPerson();//return int because id in Person class is int
     var rowsAffectedAsync = await connection.NonQueryGetAllPersonAsync();//return int because id in Person class is int
+    
+    var personsCommand = CreateGetAllPersonCommand(prepare: false);
+    var personsFromCommand = personsCommand.ExecuteGetAllPersonCommand().ToList();
 }
 ```
 
