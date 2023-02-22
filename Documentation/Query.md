@@ -99,5 +99,5 @@ public async Task SomeMethod(DbConnection connection)
 `~StartInner::Identification:id~`:
     `StartInner` - a marker for the parser about the beginning of columns of the inner entity. Each must be closed with an `EndInner` marker. 
     `::Identification` tells the parser which complex property the column group is responsible for.
-    `:id~` tells the parser which column is the null entity identifier. It doesn't have to be the primary key of the table.
+    `:id~` tells the parser which column is the null entity identifier. It doesn't have to be the primary key of the table. If you specify `:?~` instead of `:id~`, then the check for null will go on for each property, which will affect performance, but this can be useful with [custom mapping](https://github.com/SoftStoneDevelop/Gedaq.DbConnection/blob/main/Documentation/CustomMapping.md).
 `~EndInner::Identification~`: end of inner entity with name `Identification`.
