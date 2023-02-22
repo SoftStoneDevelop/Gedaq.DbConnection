@@ -12,13 +12,13 @@ bool generate = true
 )
 
 ```
-Parametrs:
-`query`;
-`methodName`: name of the generated method;
-`queryMapType`: Type of result mapping collection;
-`methodType`: type of generated method(sync/async, flags enum);
-`queryType`: type of generated method typr(read/nonquery/scalar, flags enum);
-`generate`: The need to generate a method. In case requests are used only as part of a batch, it may not be necessary to generate single methods for a request.
+Parametrs:<br>
+`query`: sql query<br>
+`methodName`: name of the generated method<br>
+`queryMapType`: Type of result mapping collection<br>
+`methodType`: type of generated method(sync/async, flags enum)<br>
+`queryType`: type of generated method typr(read/nonquery/scalar, flags enum)<br>
+`generate`: The need to generate a method. In case requests are used only as part of a batch, it may not be necessary to generate single methods for a request<br>
 
 Model classes in example:
 ```C#
