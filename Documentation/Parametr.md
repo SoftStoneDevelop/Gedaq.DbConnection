@@ -114,7 +114,7 @@ ORDER BY p.id ASC
             "Query2",
             typeof(Person),
             MethodType.Async | MethodType.Sync,
-            generate: false
+            generate: true
             )]
 [Parametr("Query2", parametrType: typeof(int), parametrName: "id")]
 [Parametr("Query2", parametrType: typeof(int), parametrName: "id2")]
@@ -127,6 +127,7 @@ public void Query2()
 [BatchPart("Query1", "BatchGetData", 2)]
 public async Task SomeBatchMethod(DbConnection connection)
 {
+    var query2Result = connection.Query2(4, 15).ToList();
     var persons = connection.BatchGetData(4, 15, 20).Select(sel => sel.ToList()).ToList();
     //4 is parametr @id from Query2; 15 is parametr @id2 from Query2
     //20 is parametr @id from Query1
