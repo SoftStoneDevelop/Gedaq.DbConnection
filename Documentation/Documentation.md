@@ -2,3 +2,4 @@
 - [QueryBatch](https://github.com/SoftStoneDevelop/Gedaq.DbConnection/blob/main/Documentation/QueryBatch.md)
 - [Parametr](https://github.com/SoftStoneDevelop/Gedaq.DbConnection/blob/main/Documentation/Parametr.md)
 - [BatchPart](https://github.com/SoftStoneDevelop/Gedaq.DbConnection/blob/main/Documentation/QueryBatch.md)
+- [Custom mapping](https://github.com/SoftStoneDevelop/Gedaq.DbConnection/blob/main/Documentation/CustomMapping.md)
