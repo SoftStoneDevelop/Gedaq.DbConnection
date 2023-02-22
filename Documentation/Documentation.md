@@ -1,4 +1,4 @@
-- [Query]()
-- [QueryBatch]()
+- [Query](https://github.com/SoftStoneDevelop/Gedaq.DbConnection/blob/main/Documentation/Query.md)
+- [QueryBatch](https://github.com/SoftStoneDevelop/Gedaq.DbConnection/blob/main/Documentation/QueryBatch.md)
 - [Parametr]()
-- [BatchPart]()
+- [BatchPart](https://github.com/SoftStoneDevelop/Gedaq.DbConnection/blob/main/Documentation/QueryBatch.md)
