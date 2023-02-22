@@ -146,3 +146,24 @@ public async Task SomeBatchMethod(DbConnection connection)
     var personsFromBatch = command.ExecuteBatchGetDataBatch().Select(sel => sel.ToList()).ToList();
 }
 ```
+
+OutParametrs(PostgreSQL example):
+
+```C#
+
+[Query(@"
+select * from dbconnectionreadfixturefunc(@inParam);
+",
+  "FuncOut",
+  queryType: Gedaq.Common.Enums.QueryType.NonQuery
+  )]
+[Parametr("FuncOut", parametrType: typeof(int), parametrName: "inParam", direction: ParameterDirection.Input)]
+[Parametr("FuncOut", parametrType: typeof(int), parametrName: "out1", direction: ParameterDirection.Output)]
+[Parametr("FuncOut", parametrType: typeof(string), parametrName: "out2", direction: ParameterDirection.Output)]
+public void ParametrsOut(DbConnection connection)
+{
+  var result = connection.NonQueryFuncOut(46, out var out1, out var out2);
+  //out1 and out2 contain the data returned by the function
+}
+
+```
