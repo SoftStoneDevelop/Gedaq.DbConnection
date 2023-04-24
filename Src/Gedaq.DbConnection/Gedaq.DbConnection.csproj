@@ -7,7 +7,7 @@
 	</ItemGroup>
 	<PropertyGroup>
 		<PackageId>Gedaq.DbConnection</PackageId>
-		<PackageVersion>1.0.0.0</PackageVersion>
+		<PackageVersion>1.1.0.0</PackageVersion>
 		<Authors>Brevnov Vyacheslav Sergeevich</Authors>
 		<RepositoryUrl>https://github.com/SoftStoneDevelop/Gedaq.DbConnection</RepositoryUrl>
 		<PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
