@@ -2,14 +2,19 @@ Constructors:
 
 ```C#
 
-public QueryBatchAttribute(string batchName, QueryType queryType, MethodType methodType)
+public QueryBatchAttribute(
+    string batchName,
+    QueryType queryType,
+    MethodType methodType,
+    AccessModifier accessModifier = AccessModifier.AsContainingClass
+)
 
 ```
 Parametrs:<br>
 `batchName`: name of the generated method<br>
 `methodType`: type of generated method(sync/async, flags enum)<br>
 `queryType`: type of generated method typr(read/nonquery/scalar, flags enum)<br>
-
+`accessModifier`: Access Modifier of Generated Methods.<br>
 ```C#
 
 public BatchPartAttribute(string methodName, string batchName, int position)
