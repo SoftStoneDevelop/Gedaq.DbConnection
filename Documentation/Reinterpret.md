@@ -71,9 +71,6 @@ public async Task SomeMethod(DbConnection connection)
     var id = connection.ScalarGetAllPerson();//return int because id in Person class is int
     var idAsync = await connection.ScalarGetAllPersonAsync();//return int because id in Person class is int
     
-    var rowsAffected = connection.NonQueryGetAllPerson();//return int because id in Person class is int
-    var rowsAffectedAsync = await connection.NonQueryGetAllPersonAsync();//return int because id in Person class is int
-    
     var personsCommand = CreateGetAllPersonCommand(prepare: false);
     var personsFromCommand = personsCommand.ExecuteGetAllPersonCommand().ToList();
 }
