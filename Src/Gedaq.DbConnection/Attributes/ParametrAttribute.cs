@@ -7,7 +7,6 @@ namespace Gedaq.DbConnection.Attributes
     public sealed class ParametrAttribute : Attribute
     {
         public ParametrAttribute(
-            string methodName,
             string parametrName,
             Type parametrType,
             DbType dbType = DbType.Object,

@@ -7,7 +7,6 @@ namespace Gedaq.DbConnection.Attributes
     {
         public BatchPartAttribute(
             string methodName,
-            string batchName,
             int position
             )
         {
