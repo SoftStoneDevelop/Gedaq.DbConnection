@@ -3,7 +3,6 @@ Constructors:
 ```C#
 
 public ParametrAttribute(
-  string methodName,
   string parametrName,
   Type parametrType,
   DbType dbType = DbType.Object,
@@ -19,7 +18,6 @@ public ParametrAttribute(
 
 ```
 Parametrs:<br>
-`methodName`: the name of query of which the parametr belongs<br>
 `parametrName`: parametr name<br>
 `parametrType`: parametr type<br>
 The rest of the properties are DbParameter properties.
@@ -84,8 +82,9 @@ ORDER BY p.id ASC
             typeof(Person),
             MethodType.Async | MethodType.Sync,
             generate: false
-            )]
-[Parametr("Query1", parametrType: typeof(int), parametrName: "id")]
+            ),
+            Parametr(parametrType: typeof(int), parametrName: "id")
+            ]
 public void Query1()
 {
 }
@@ -115,16 +114,18 @@ ORDER BY p.id ASC
             typeof(Person),
             MethodType.Async | MethodType.Sync,
             generate: true
-            )]
-[Parametr("Query2", parametrType: typeof(int), parametrName: "id")]
-[Parametr("Query2", parametrType: typeof(int), parametrName: "id2")]
+            ),
+            Parametr(parametrType: typeof(int), parametrName: "id"),
+            Parametr(parametrType: typeof(int), parametrName: "id2")
+            ]
 public void Query2()
 {
 }
 
-[QueryBatch("BatchGetData", Gedaq.Common.Enums.QueryType.Read | Gedaq.Common.Enums.QueryType.Scalar, Gedaq.Common.Enums.MethodType.Sync)]
-[BatchPart("Query2", "BatchGetData", 1)]
-[BatchPart("Query1", "BatchGetData", 2)]
+[QueryBatch("BatchGetData", Gedaq.Common.Enums.QueryType.Read | Gedaq.Common.Enums.QueryType.Scalar, Gedaq.Common.Enums.MethodType.Sync),
+BatchPart("Query2", 1),
+BatchPart("Query1", 2)
+]
 public async Task SomeBatchMethod(DbConnection connection)
 {
     var query2Result = connection.Query2(4, 15).ToList();
@@ -156,10 +157,11 @@ select * from dbconnectionreadfixturefunc(@inParam);
 ",
   "FuncOut",
   queryType: Gedaq.Common.Enums.QueryType.NonQuery
-  )]
-[Parametr("FuncOut", parametrType: typeof(int), parametrName: "inParam", direction: ParameterDirection.Input)]
-[Parametr("FuncOut", parametrType: typeof(int), parametrName: "out1", direction: ParameterDirection.Output)]
-[Parametr("FuncOut", parametrType: typeof(string), parametrName: "out2", direction: ParameterDirection.Output)]
+  ),
+  Parametr(parametrType: typeof(int), parametrName: "inParam", direction: ParameterDirection.Input),
+  Parametr(parametrType: typeof(int), parametrName: "out1", direction: ParameterDirection.Output),
+  Parametr(parametrType: typeof(string), parametrName: "out2", direction: ParameterDirection.Output)
+  ]
 public void ParametrsOut(DbConnection connection)
 {
   var result = connection.NonQueryFuncOut(46, out var out1, out var out2);
