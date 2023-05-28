@@ -118,9 +118,10 @@ public void Query2()
 {
 }
 
-[QueryBatch("BatchGetData", Gedaq.Common.Enums.QueryType.Read | Gedaq.Common.Enums.QueryType.Scalar, Gedaq.Common.Enums.MethodType.Sync)]
-[BatchPart("Query2", "BatchGetData", 1)]
-[BatchPart("Query1", "BatchGetData", 2)]
+[QueryBatch("BatchGetData", Gedaq.Common.Enums.QueryType.Read | Gedaq.Common.Enums.QueryType.Scalar, Gedaq.Common.Enums.MethodType.Sync),
+ BatchPart("Query2", 1),
+ BatchPart("Query1", 2)
+]
 public async Task SomeBatchMethod(DbConnection connection)
 {
     var persons = connection.BatchGetData().Select(sel => sel.ToList()).ToList();

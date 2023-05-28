@@ -3,14 +3,12 @@ Constructors:
 ```C#
 
 public QueryFormatAttribute(
-  string methodName,
   int position,
   string parametrName = null
   )
 
 ```
 Parametrs:<br>
-`methodName`: the name of query of which the format parametr belongs<br>
 `parametrName`: parametr name(purely stylistically, instead of format0, format1.. your name will be used for the parameter of the generated method format0, myName,format1..)<br>
 `position`: position in String.Format<br>
 
@@ -73,9 +71,10 @@ WHERE {0}
             "Query1",
             typeof(Person),
             Gedaq.Common.Enums.MethodType.Async | Gedaq.Common.Enums.MethodType.Sync
-            )]
-        [QueryFormat("Query1", 1, "order")]
-        [QueryFormat("Query1", 0, "filter")]
+            ),
+            QueryFormat(1, "order"),
+            QueryFormat(0, "filter")
+            ]
 public async Task Query1()
 {
     //same query but different conditions
