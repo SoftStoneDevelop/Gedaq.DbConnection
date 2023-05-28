@@ -17,7 +17,8 @@ namespace Gedaq.DbConnection.Attributes
             bool sourceColumnNullMapping = false,
             DataRowVersion sourceVersion = DataRowVersion.Current,
             byte scale = 0,
-            byte precision = 0
+            byte precision = 0,
+            string methodParametrName = null
             )
         {
         }
