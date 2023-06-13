@@ -121,7 +121,11 @@ public void Query2()
 {
 }
 
-[QueryBatch("BatchGetData", Gedaq.Common.Enums.QueryType.Read | Gedaq.Common.Enums.QueryType.Scalar, Gedaq.Common.Enums.MethodType.Sync),
+[QueryBatch(
+    "BatchGetData",
+    Gedaq.Common.Enums.QueryType.Read | Gedaq.Common.Enums.QueryType.Scalar,
+    Gedaq.Common.Enums.MethodType.Sync
+    ),
  BatchPart("Query2", 1),
  BatchPart("Query1", 2)
 ]
@@ -131,7 +135,7 @@ public async Task SomeBatchMethod(DbConnection connection)
     //persons[0] is result of Query2;
     //persons[1] is result of Query1;
     
-    var personsAsync = await connection.BatchGetData().Select(sel => sel.ToListAsync()).ToListAsync();
+    var personsAsync = await connection.BatchGetData().Select(sel => await sel.ToListAsync()).ToListAsync();
     //persons[0] is result of Query2;
     //persons[1] is result of Query1;
     
