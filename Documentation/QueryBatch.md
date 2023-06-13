@@ -6,7 +6,8 @@ public QueryBatchAttribute(
     string batchName,
     QueryType queryType,
     MethodType methodType,
-    AccessModifier accessModifier = AccessModifier.AsContainingClass
+    AccessModifier accessModifier = AccessModifier.AsContainingClass,
+    AsyncResult asyncResultType = AsyncResult.ValueTask
 )
 
 ```
@@ -15,6 +16,8 @@ Parametrs:<br>
 `methodType`: type of generated method(sync/async, flags enum)<br>
 `queryType`: type of generated method typr(read/nonquery/scalar, flags enum)<br>
 `accessModifier`: Access Modifier of Generated Methods.<br>
+`asyncResultType`: The type of the generated Task/ValueTask method.<br>
+
 ```C#
 
 public BatchPartAttribute(string methodName, string batchName, int position)
