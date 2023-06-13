@@ -13,7 +13,8 @@ namespace Gedaq.DbConnection.Attributes
             MethodType methodType = MethodType.Sync,
             QueryType queryType = QueryType.Read,
             bool generate = true,
-            AccessModifier accessModifier = AccessModifier.AsContainingClass
+            AccessModifier accessModifier = AccessModifier.AsContainingClass,
+            AsyncResult asyncResultType = AsyncResult.ValueTask
             )
         {
         }

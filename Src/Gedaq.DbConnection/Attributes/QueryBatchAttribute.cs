@@ -10,7 +10,8 @@ namespace Gedaq.DbConnection.Attributes
             string batchName,
             QueryType queryType,
             MethodType methodType,
-            AccessModifier accessModifier = AccessModifier.AsContainingClass
+            AccessModifier accessModifier = AccessModifier.AsContainingClass,
+            AsyncResult asyncResultType = AsyncResult.ValueTask
             )
         {
         }
