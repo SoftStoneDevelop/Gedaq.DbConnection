@@ -64,8 +64,9 @@ ORDER BY p.id ASC
             "CustomMapping",
             typeof(PersonCustom),
             Gedaq.Common.Enums.MethodType.Async | Gedaq.Common.Enums.MethodType.Sync
-            )]
-[Parametr("CustomMapping", parametrType: typeof(int), parametrName: "id", dbType: System.Data.DbType.Int32)]
+            ),
+            Parametr(parametrType: typeof(int), parametrName: "id", dbType: System.Data.DbType.Int32)
+            ]
 public async Task SomeMethod(DbConnection connection)
 {
     var persons = connection.CustomMapping(3).ToList();
