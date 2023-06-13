@@ -9,7 +9,8 @@ QueryAttribute(
     MethodType methodType = MethodType.Sync,
     QueryType queryType = QueryType.Read,
     bool generate = true,
-    AccessModifier accessModifier = AccessModifier.AsContainingClass
+    AccessModifier accessModifier = AccessModifier.AsContainingClass,
+    AsyncResult asyncResultType = AsyncResult.ValueTask
 )
 
 ```
@@ -21,6 +22,7 @@ Parametrs:<br>
 `queryType`: type of generated method typr(read/nonquery/scalar, flags enum)<br>
 `generate`: The need to generate a method. In case requests are used only as part of a batch, it may not be necessary to generate single methods for a request<br>
 `accessModifier`: Access Modifier of Generated Methods.<br>
+`asyncResultType`: The type of the generated Task/ValueTask method.<br>
 
 Model classes in example:
 ```C#
