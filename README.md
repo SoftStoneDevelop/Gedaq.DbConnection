@@ -16,3 +16,5 @@
 </h3>
 
 Attributes required for [Gedaq ORM](https://github.com/SoftStoneDevelop/Gedaq) to work with methods available in DbConnection. Allows you to work with the database without being tied to a specific database.
+
+Something is still not clear and [Documentation](https://github.com/SoftStoneDevelop/Gedaq.DbConnection/tree/main/Documentation/Documentation.md) does not help? [Feel free to ask a question on StackOverflow](https://stackoverflow.com/questions/ask?tags=gedaq,dbconnection,c%23)
