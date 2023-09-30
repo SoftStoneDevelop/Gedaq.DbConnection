@@ -11,7 +11,8 @@ namespace Gedaq.DbConnection.Attributes
             QueryType queryType,
             MethodType methodType,
             AccessModifier accessModifier = AccessModifier.AsContainingClass,
-            AsyncResult asyncResultType = AsyncResult.ValueTask
+            AsyncResult asyncResultType = AsyncResult.ValueTask,
+            Type asPartInterface = null
             )
         {
         }

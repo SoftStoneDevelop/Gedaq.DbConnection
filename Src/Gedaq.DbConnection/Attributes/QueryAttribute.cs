@@ -14,7 +14,8 @@ namespace Gedaq.DbConnection.Attributes
             QueryType queryType = QueryType.Read,
             bool generate = true,
             AccessModifier accessModifier = AccessModifier.AsContainingClass,
-            AsyncResult asyncResultType = AsyncResult.ValueTask
+            AsyncResult asyncResultType = AsyncResult.ValueTask,
+            Type asPartInterface = null
             )
         {
         }
