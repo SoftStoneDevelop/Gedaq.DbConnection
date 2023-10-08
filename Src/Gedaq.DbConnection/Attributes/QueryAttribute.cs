@@ -15,7 +15,8 @@ namespace Gedaq.DbConnection.Attributes
             bool generate = true,
             AccessModifier accessModifier = AccessModifier.AsContainingClass,
             AsyncResult asyncResultType = AsyncResult.ValueTask,
-            Type asPartInterface = null
+            Type asPartInterface = null,
+            ReturnType returnType = ReturnType.Enumerable
             )
         {
         }
