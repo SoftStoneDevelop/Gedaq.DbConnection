@@ -3,11 +3,11 @@
 		<TargetFramework>net9.0</TargetFramework>
 	</PropertyGroup>
 	<ItemGroup>
-		<PackageReference Include="Gedaq.Common" Version="0.3.5" />
+		<PackageReference Include="Gedaq.Common" Version="9.0.0-beta" />
 	</ItemGroup>
 	<PropertyGroup>
 		<PackageId>Gedaq.DbConnection</PackageId>
-		<PackageVersion>9.0.0.0</PackageVersion>
+		<PackageVersion>9.0.0.1-beta</PackageVersion>
 		<Authors>Brevnov Vyacheslav Sergeevich</Authors>
 		<RepositoryUrl>https://github.com/SoftStoneDevelop/Gedaq.DbConnection</RepositoryUrl>
 		<PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
