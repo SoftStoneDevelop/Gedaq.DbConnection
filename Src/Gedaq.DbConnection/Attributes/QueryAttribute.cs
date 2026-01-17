@@ -7,8 +7,8 @@ namespace Gedaq.DbConnection.Attributes
     public sealed class QueryAttribute : Attribute
     {
         public QueryAttribute(
-            string query,
             string methodName,
+            string query = null,
             Type queryMapType = null,
             MethodType methodType = MethodType.Sync,
             QueryType queryType = QueryType.Read,
@@ -16,8 +16,7 @@ namespace Gedaq.DbConnection.Attributes
             AccessModifier accessModifier = AccessModifier.AsContainingClass,
             AsyncResult asyncResultType = AsyncResult.ValueTask,
             Type asPartInterface = null,
-            ReturnType returnType = ReturnType.Enumerable
-            )
+            ReturnType returnType = ReturnType.List)
         {
         }
     }

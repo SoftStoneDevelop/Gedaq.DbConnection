@@ -18,8 +18,7 @@ namespace Gedaq.DbConnection.Attributes
             DataRowVersion sourceVersion = DataRowVersion.Current,
             byte scale = 0,
             byte precision = 0,
-            string methodParametrName = null
-            )
+            string methodParametrName = null)
         {
         }
     }
