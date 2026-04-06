@@ -9,7 +9,8 @@ namespace Gedaq.DbConnection.Attributes
         public QueryAttribute(
             string methodName,
             string query = null,
-            Type queryMapType = null,
+            Type[] queryMapTypes = null,
+            string[] overrideAliasPrefixs = null,
             MethodType methodType = MethodType.Sync,
             QueryType queryType = QueryType.Read,
             bool generate = true,
