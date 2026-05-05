@@ -196,3 +196,73 @@ Now we don't care what the properties are named, because the mapping will retrie
 `reader.GetFieldValue<T>(order);`
 
 This allows us to write any SQL queries as long as the order in the row matches the declared one.
+
+___________
+
+As you noted above, we can use both dynamic queries and pre-defined ones. But what if the parameters are also unknown in advance? Then we need to use the DynamicParameter attribute instead of the Parameter attribute.
+
+```C#
+
+public class Person
+{
+    [Alias(order: 0)]
+    public int Id { get; set; }
+
+    [Alias(order: 2)] // We have specifically changed the order in the query, for example
+    public string FirstName { get; set; }
+
+    [Alias(order: 1)]
+    public string MiddleName { get; set; }
+
+    [Alias(order: 3)]
+    public string LastName { get; set; }
+
+    [Gedaq.Common.Attributes.IgnoreProperty]
+    public Identification Identification { get; set; }
+}
+
+public class Identification
+{
+    [Alias(order: 0)]
+    public int Id { get; set; }
+
+    [Alias(order: 1)]
+    public string TypeName { get; set; }
+}
+
+    [Query(
+methodName: "MultiMapping",
+queryMapTypes: [typeof(Person), typeof(Identification)],
+methodType: Gedaq.Common.Enums.MethodType.Async | Gedaq.Common.Enums.MethodType.Sync),
+DynamicParametr()]
+public async Task SomeMethod(DbConnection connection)
+{
+    var parametr = new SqlParameter();
+    parametr.SqlDbType = System.Data.SqlDbType.Int;
+    parametr.ParameterName = "id";
+
+    var persons = new List<Person>;
+    MultiMapping(connection, dynamicQuery: @"
+SELECT 
+    p.id as banana43,
+    p.middlename as banana65,
+    p.firstname,
+    p.lastname,
+    i.id as unexpect16,
+    i.typename
+FROM person p
+LEFT JOIN identification i ON i.id = p.identification_id
+LEFT JOIN country c ON c.id = i.country_id
+WHERE p.id != @id
+",
+dynamicParametrs: [parametr],
+mapDelegate: (person, ident) =>
+{
+    person.Identification = ident;
+    persons.Add(person);
+});
+}
+
+```
+
+The new generated method takes abstract parameters `dynamicParametrs`.
