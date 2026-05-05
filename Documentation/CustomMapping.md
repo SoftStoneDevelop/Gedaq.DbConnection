@@ -42,7 +42,7 @@ Usage:
 ```C#
 
 [Query(
-            @"
+    query: @"
 SELECT 
     p.id,
 ~StartInner::Name:?~
@@ -64,12 +64,10 @@ LEFT JOIN country c ON c.id = i.country_id
 WHERE p.id != @id
 ORDER BY p.id ASC
 ",
-            "CustomMapping",
-            typeof(PersonCustom),
-            Gedaq.Common.Enums.MethodType.Async | Gedaq.Common.Enums.MethodType.Sync
-            ),
-            Parametr(parametrType: typeof(int), parametrName: "id", dbType: System.Data.DbType.Int32)
-            ]
+    methodName: "CustomMapping",
+    queryMapTypes: [typeof(PersonCustom)],
+    methodType: Gedaq.Common.Enums.MethodType.Async | Gedaq.Common.Enums.MethodType.Sync),
+    Parametr(parametrType: typeof(int), parametrName: "id", dbType: System.Data.DbType.Int32)]
 public async Task SomeMethod(DbConnection connection)
 {
     var persons = connection.CustomMapping(3).ToList();
