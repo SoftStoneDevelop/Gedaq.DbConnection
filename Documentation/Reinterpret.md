@@ -36,7 +36,7 @@ Usage:
 ```C#
 
 [Query(
-            @"
+    query: @"
 SELECT 
 ~Reinterpret::ReinterpId~
     p.id,
@@ -59,10 +59,9 @@ LEFT JOIN identification i ON i.id = p.identification_id
 LEFT JOIN country c ON c.id = i.country_id
 ORDER BY p.id ASC
 ",
-            "GetAllPerson",
-            typeof(Person),
-            Gedaq.Common.Enums.MethodType.Async | Gedaq.Common.Enums.MethodType.Sync
-            )]
+    methodName: "GetAllPerson",
+    queryMapTypes: [typeof(Person)],
+    methodType: Gedaq.Common.Enums.MethodType.Async | Gedaq.Common.Enums.MethodType.Sync)]
 public async Task SomeMethod(DbConnection connection)
 {
     var persons = connection.GetAllPerson().ToList();
