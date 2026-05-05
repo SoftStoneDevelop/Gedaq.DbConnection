@@ -1,3 +1,6 @@
+Custom mapping allows you to define at the request level, using markup, where the data from the response will be distributed.
+In the example below, the person table contains First Name, Last Name, Middle Name, but in the class they must be packaged into a nested entity.
+
 Model classes in example:
 ```C#
 
